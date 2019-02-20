@@ -4,7 +4,26 @@
   - 1 virtual router
   - 1 Ubuntu box (exabgp node)
 
-## Virtual Router Configuration
+# Exercise Tasks
+
+## Virtual router configuration
+- Modify Vagrantfile to point to the correct url to download the base box
+- Change first interface of the Virtual Machine from NAT to host-only in Virtualbox
+
+## ExaBGP Node Configuration
+Create a Vagrantfile with the following characteristics:
+- host ip address = 192.168.33.254/24
+- pip install exabgp
+- Use provided config.ini file to configure exabgp with
+  - neighbor 192.168.33.2
+  - local-as 65000
+  - peer-as 65000
+- using the ExaBGP Documentation, modify the announce-route.py file to advertise at least two routes to the virtual router
+
+
+# Appendix
+
+## Notes on Virtual Router Configuration
 Create a Vagrantfile with the following characteristics:
 - host ip address = 192.168.1.1/24
 
@@ -31,15 +50,6 @@ vagrant box list  # to check if it was imported correctly
 
 
 
-## ExaBGP Node Configuration
-Create a Vagrantfile with the following characteristics:
-- host ip address = 192.168.1.254/24
-- pip install exabgp
-- Configures exabgp with
-  - neighbor 192.168.1.1
-  - local-as 65000
-  - peer-as 65000
-- write a script that announces route updates 
 
 
 
